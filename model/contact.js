@@ -1,10 +1,9 @@
 var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
 
-var contact = new Schema({
-  name: String,
-  age: Number
-}, {collation : 'contact'});
+var contact = new mongoose.Schema({
+  email: String,
+  password: Number
+});
 
-module.exports = mongoose.model('contact', contact);
+module.exports = mongoose.model('contact', contact, 'contact');//tên-model, tên schema, tên collection
 
