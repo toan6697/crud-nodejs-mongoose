@@ -10,3 +10,7 @@ module.exports.postCreate = (req, res, next) => {
     // })
     res.redirect('add');
 }
+module.exports.listContact= async (req, res, next) => {
+    var result= await contactModel.find();
+    res.render('main', {result: result, title: 'Trang  chu'});
+}

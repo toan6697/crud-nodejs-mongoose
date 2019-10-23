@@ -18,4 +18,6 @@ router.get('/add', controller.loadViewAdd);
 
 router.post('/postCreate', controller.postCreate);
 
+router.get('/list', controller.listContact);
+
 module.exports = router;
