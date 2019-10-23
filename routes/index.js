@@ -11,7 +11,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/main',async function(req, res, next){
   var contacts =await contactModel.find();
-  console.log(contacts);
 });
 
 router.get('/add', controller.loadViewAdd);
@@ -20,4 +19,5 @@ router.post('/postCreate', controller.postCreate);
 
 router.get('/list', controller.listContact);
 
+router.get('/delete/:id', controller.deleteContact);
 module.exports = router;
