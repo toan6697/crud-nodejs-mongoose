@@ -20,4 +20,8 @@ router.post('/postCreate', controller.postCreate);
 router.get('/list', controller.listContact);
 
 router.get('/delete/:id', controller.deleteContact);
+
+router.get('/contact/:id', controller.getContactById);
+
+router.post('/update-contact', controller.updateContact);
 module.exports = router;
