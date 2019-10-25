@@ -24,4 +24,6 @@ router.get('/delete/:id', controller.deleteContact);
 router.get('/contact/:id', controller.getContactById);
 
 router.post('/update-contact', controller.updateContact);
+
+router.post('/search', controller.searchContact);
 module.exports = router;

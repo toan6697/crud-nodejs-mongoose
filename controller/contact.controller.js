@@ -9,7 +9,7 @@ module.exports.postCreate = (req, res, next) => {
 }
 module.exports.listContact= async (req, res, next) => {
     var result= await contactModel.find();
-    res.render('main', {result: result, title: 'Trang  chu'});
+    res.render('main', {result: result, title: 'Trang  chu', csrfToken: req.csrfToken()});
 }
 
 module.exports.deleteContact= (req, res, next) =>{
@@ -30,4 +30,8 @@ module.exports.updateContact= (req, res, next) => {
         doc.save();
     });
     res.redirect('../list');
+}
+module.exports.searchContact= async (req, res, next) => {
+    const result = await contactModel.find({ email: req.body.search });
+    res.render('main', {result: result, title: 'Trang  chu', csrfToken: req.csrfToken()})
 }
